@@ -5,6 +5,6 @@ A basic UserManager I wrote for my Github Profile.
 ```
 Name: frost 
 Languages: [Java] 
-Languages to Learn: [Python, Kotlin, Ruby, JavaScript, HTML, CSS] 
+Languages to Learn: [Python, Kotlin, Rust, Ruby, JavaScript, HTML, CSS] 
 Discord: frost#0723
 ```
