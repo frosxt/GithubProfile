@@ -1,25 +1,14 @@
 package com.github.frosxt;
 
 import com.github.frosxt.managers.UserManager;
-import com.github.frosxt.objects.User;
+import com.github.frosxt.users.Frost;
 
 public class GithubProfile {
 
-    public static void main(String[] args) {
-        initialiseUser();
+    public static void main(final String[] args) {
+        new Frost();
 
-        UserManager.getUsers().forEach(user ->
-                System.out.printf("Name: %s %nLanguages: %s %nLanguages to Learn: %s %nDiscord: %s",
-                        user.getName(), user.getLanguages().toString(), user.getLanguagesToLearn().toString(), user.getDiscord()));
-    }
-
-    private static void initialiseUser() {
-        User user = new User();
-        user.setName("frost");
-        user.addLanguage("Java");
-        user.addLanguageToLearn("Python", "Kotlin", "Ruby", "JavaScript", "HTML", "CSS");
-        user.setDiscord("frost#0723");
-
-        UserManager.addUser(user);
+        UserManager.getUsers().forEach((username, user) ->
+                System.out.printf("Username: %s | Country: %s | Discord: %s | Languages: %s", username, user.getCountry(), user.getDiscord(), user.getLanguages().toString()));
     }
 }
