@@ -3,8 +3,5 @@ A basic UserManager I wrote for my Github Profile.
 
 # Expected Result
 ```
-Name: frost 
-Languages: [Java] 
-Languages to Learn: [Python, Kotlin, Rust, Ruby, JavaScript, HTML, CSS] 
-Discord: frost#0723
+Username: frost | Country: Scotland | Discord: frost#0723 | Languages: [Java]
 ```
