@@ -1,49 +1,35 @@
 package com.github.frosxt.objects;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
-public class User {
-    private String name;
-    private final List<String> languages;
-    private final List<String> languagesToLearn;
-    private String discord;
+public abstract class User {
+    private final String username;
+    private final String country;
+    private final String discord;
+    private final Set<String> languages = new HashSet<>();
 
-    public User() {
-        languages = new ArrayList<>();
-        languagesToLearn = new ArrayList<>();
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void addLanguage(String... languageName) {
-        languages.addAll(Arrays.asList(languageName));
-    }
-
-    public void addLanguageToLearn(String... languageName) {
-        languagesToLearn.addAll(Arrays.asList(languageName));
-    }
-
-    public void setDiscord(String discord) {
+    public User(final String username, final String country, final String discord, final String... languages) {
+        this.username = username;
+        this.country = country;
         this.discord = discord;
+        this.languages.addAll(Arrays.asList(languages));
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return this.username;
     }
 
-    public List<String> getLanguages() {
-        return new ArrayList<>(languages);
-    }
-
-    public List<String> getLanguagesToLearn() {
-        return new ArrayList<>(languagesToLearn);
+    public String getCountry() {
+        return this.country;
     }
 
     public String getDiscord() {
-        return discord;
+        return this.discord;
+    }
+
+    public Set<String> getLanguages() {
+        return this.languages;
     }
 }

@@ -2,21 +2,21 @@ package com.github.frosxt.managers;
 
 import com.github.frosxt.objects.User;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
 
 public class UserManager {
-    private static final Set<User> USERS = new HashSet<>();
+    private static final Map<String, User> USERS = new HashMap<>();
 
     private UserManager() {
         // This class should not be initialised
     }
 
-    public static void addUser(User user) {
-        USERS.add(user);
+    public static void addUser(final User user) {
+        USERS.put(user.getUsername(), user);
     }
 
-    public static Set<User> getUsers() {
-        return new HashSet<>(USERS);
+    public static Map<String, User> getUsers() {
+        return new HashMap<>(USERS);
     }
 }
